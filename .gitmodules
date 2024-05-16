@@ -10,3 +10,12 @@
 [submodule "lib/balancer-v2-monorepo"]
 	path = lib/balancer-v2-monorepo
 	url = https://github.com/balancer-labs/balancer-v2-monorepo
+[submodule "lib/uniswap-v3-periphery"]
+	path = lib/uniswap-v3-periphery
+	url = https://github.com/rafaelmrdyn/uniswap-v3-periphery
+[submodule "universal-router"]
+	path = universal-router
+	url = https://github.com/Uniswap/universal-router
+[submodule "lib/universal-router"]
+	path = lib/universal-router
+	url = https://github.com/Uniswap/universal-router

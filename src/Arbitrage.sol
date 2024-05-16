@@ -5,11 +5,15 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol";
 import "@balancer-labs/v2-interfaces/contracts/vault/IVault.sol";
 import "@balancer-labs/v2-interfaces/contracts/vault/IFlashLoanRecipient.sol";
+import "@uniswap/universal-router/contracts/interfaces/IUniversalRouter.sol";
 
 contract FlashLoanArbitrage is IFlashLoanRecipient {
     IVault private constant vault = IVault(0xBA12222222228d8Ba445958a75a0704d566BF2C8);
-    IUniswapV2Router02 private constant uniswapRouter = IUniswapV2Router02(<UniswapRouterAddress>);
-    IUniswapV2Router02 private constant sushiswapRouter = IUniswapV2Router02(<SushiswapRouterAddress>);
+    //@dev Uniswap V2Router02 doesn't support any testnets, using UniversalRouter instead
+    // IUniswapV2Router02 private constant uniswapRouter = IUniswapV2Router02(<UniswapRouterAddress>);
+    IUniswapV2Router02 private constant sushiswapRouter = IUniswapV2Router02(0xeaBcE3E74EF41FB40024a21Cc2ee2F5dDc615791);
+    IUniversalRouter private constant uniswapRouter = IUniversalRouter(0x3fC91A3afd70395Cd496C647d5a6CC9D4B2b7FAD);
+
 
     function makeFlashLoan(
         IERC20[] memory tokens,
